@@ -23,7 +23,7 @@ C言語用のデータ構造ライブラリです。
 (括弧はまだ実装すらしていないファイル)
 
 * (linkedlist.h)
-* [queue.h](src/queue.md)
+* [queue.h](doc/queue.md)
 * (stack.h)
 
 [^1]:なんでCで競プロやってるんだろう……
