@@ -20,10 +20,11 @@ C言語用のデータ構造ライブラリです。
 
 ## ファイル一覧
 ファイル名がAPI仕様書にリンクする予定です。
-(括弧はまだ実装すらしていないファイル)
+(括弧は未実装)
 
 * (linkedlist.h)
+* (binarynode.h)
 * [queue.h](doc/queue.md)
-* (stack.h)
+* [stack.h](doc/stack.md)
 
 [^1]:なんでCで競プロやってるんだろう……
