@@ -11,31 +11,31 @@ typedef struct t_queue{
 	int *datavec;
 } Queue;
 
-Queue *q_init(int);
-void q_free(Queue*);
-int q_length(Queue*);
+Queue *initQueue(int);
+void freeQueue(Queue*);
+int queueLength(Queue*);
 bool enqueue(Queue*, int);
 int dequeue(Queue*);
-void printqueue(Queue*);
-void q_error();
+void printQueue(Queue*);
+void errorQueue();
 
-Queue *q_init(int size){
+Queue *initQueue(int size){
 	Queue *q = (Queue*)malloc(sizeof(Queue));
-	if(q == NULL) q_error();
+	if(q == NULL) errorQueue();
 
 	q->size = size;
 	q->datavec = (int*)malloc(sizeof(int) * (size+1));
-	if(q->datavec == NULL) q_error();
+	if(q->datavec == NULL) errorQueue();
 	q->head = q->tail = 0;
 	return q;
 }
 
-void q_free(Queue *q){
+void freeQueue(Queue *q){
 	free(q->datavec);
 	free(q);
 }
 
-int q_length(Queue *q){
+int queueLength(Queue *q){
 	// mod((head-tail) % (size+1))
 	return (q->size+1+q->head-q->tail) % (q->size+1);
 }
@@ -61,7 +61,7 @@ int dequeue(Queue *q){
 	return ret;
 }
 
-void printqueue(Queue *q){
+void printQueue(Queue *q){
 	putc('[', stdout);
 	if(q->head != q->tail){
 		printf("%d", q->datavec[(q->head+q->size) % (q->size+1)]);
@@ -72,7 +72,7 @@ void printqueue(Queue *q){
 	printf("]\n");
 }
 
-void q_error(){
+void errorQueue(){
 	fprintf(stderr, " %s(%d)", strerror(errno), errno);
 	exit(1);
 }
