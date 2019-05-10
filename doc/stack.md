@@ -16,7 +16,7 @@
 |:--|:--|:--|
 |Stack *initStack(int)|構造体を新たに生成し、そのポインタを返します。||
 |void freeStack(Stack*)|構造体を削除しメモリを解放します。||
-|int queueLength(Stack*)|格納されているデータの個数を返します。||
+|int stackLength(Stack*)|格納されているデータの個数を返します。||
 |bool push(Stack*, int)|新たにデータを追加します。<bf>スタックが既に満杯の場合のみ偽値を返します。||
 |int pop(Stack*)|頂上のデータを取り出します。スタックが空の場合はエラーメッセージを出力して終了します。||
 |void printStack(Stack*)|スタックの内容を\[頂上-\>底\]の順にリスト形式で標準出力します。||
